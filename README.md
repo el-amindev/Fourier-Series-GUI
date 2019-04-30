@@ -29,7 +29,7 @@ We welcome all contributations. First read our [Contributor Code of Conduct][COD
 
 ## License
 
-GNU General Public License v3.0 © [github.com/AminSpek/Fourier-Series-GUI][github]
+Copyright (c) 2019 AminSpek [github.com/AminSpek/Fourier-Series-GUI][github]
 
 
 
