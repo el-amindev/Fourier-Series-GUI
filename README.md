@@ -27,7 +27,7 @@ Open SawtoothGUI.m with MATLAB and run.
 
 ## Contributing
 
-We welcome all contributations. First read our [Contributor Code of Conduct][CODE_OF_CONDUCT] and then get started [contributing][CONTRIBUTING].
+Welcome all contributations. First read our [Contributor Code of Conduct][CODE_OF_CONDUCT] and then get started [contributing][CONTRIBUTING].
 
 ## License
 
