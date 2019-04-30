@@ -1,4 +1,7 @@
+# ![GitHub Logo](https://github.com/AminSpek/Fourier-Series-GUI/blob/master/Sawtooth.png)
+
 [![GitHub license](https://img.shields.io/github/license/AminSpek/Fourier-Series-GUI.svg?style=plastic)](https://github.com/AminSpek/Fourier-Series-GUI/blob/master/LICENSE)
+
 
 # Fourier-Series-GUI
 Graphical User Interface (GUI) and Fourier Series in MATLAB®.
