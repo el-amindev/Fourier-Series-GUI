@@ -11,6 +11,8 @@ The objective is to design Graphical User Interface (GUI) and implement Fourier 
 
 ### Download
 - Download the latest stable MATLAB® for use on your desktop.
+- Download [SawtoothGUI.fig](https://github.com/AminSpek/Fourier-Series-GUI/raw/master/SawtoothGUI.fig)
+- Download [SawtoothGUI.m](https://github.com/AminSpek/Fourier-Series-GUI/raw/master/SawtoothGUI.m)
 - Open SawtoothGUI.m with MATLAB and run.
 
 
