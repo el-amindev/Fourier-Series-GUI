@@ -10,6 +10,10 @@ Fourier Series is a technique for expressing a periodic function by a linear com
 
 The objective is to design Graphical User Interface (GUI) and implement Fourier Series in MATLAB®.
 
+## NOTE
+- The GUI only work for Sawtooth Exponential Graph and no extra features. 
+- Please add your own features.
+
 ## Installation
 
 ### Download
@@ -17,6 +21,13 @@ The objective is to design Graphical User Interface (GUI) and implement Fourier 
 - Download [SawtoothGUI.fig](https://github.com/AminSpek/Fourier-Series-GUI/raw/master/SawtoothGUI.fig)
 - Download [SawtoothGUI.m](https://github.com/AminSpek/Fourier-Series-GUI/raw/master/SawtoothGUI.m)
 - Open SawtoothGUI.m with MATLAB and run.
+
+## Todo List
+- Add Magnitude & Phase function.
+- Rearrange the coding.
+- Fix magnitude overlap graph.
+- Fix Gibbs Phenomenon Graph (Axel 5) title.
+- Rearrange GUI.
 
 
 ## Support
