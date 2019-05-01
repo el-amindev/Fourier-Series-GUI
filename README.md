@@ -28,6 +28,9 @@ The objective is to design Graphical User Interface (GUI) and implement Fourier 
 - Fix magnitude overlap graph.
 - Fix Gibbs Phenomenon Graph (Axel 5) title.
 - Rearrange GUI.
+- Add input value to Gibbs Phenomenon function.
+- uitable data wrong phase value for n = 0.
+- Add reset button.
 
 
 ## Support
