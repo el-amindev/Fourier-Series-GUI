@@ -31,6 +31,7 @@ The objective is to design Graphical User Interface (GUI) and implement Fourier 
 - Add input value to Gibbs Phenomenon function.
 - uitable data wrong phase value for n = 0.
 - Add reset button.
+- Add plot value in the graph.
 
 
 ## Support
