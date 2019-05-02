@@ -1,35 +1,35 @@
-function varargout = SawtoothGUI(varargin)
-% SAWTOOTHGUI MATLAB code for SawtoothGUI.fig
-%      SAWTOOTHGUI, by itself, creates a new SAWTOOTHGUI or raises the existing
+function varargout = Sawtooth2019(varargin)
+% SAWTOOTH2019 MATLAB code for Sawtooth2019.fig
+%      SAWTOOTH2019, by itself, creates a new SAWTOOTH2019 or raises the existing
 %      singleton*.
 %
-%      H = SAWTOOTHGUI returns the handle to a new SAWTOOTHGUI or the handle to
+%      H = SAWTOOTH2019 returns the handle to a new SAWTOOTH2019 or the handle to
 %      the existing singleton*.
 %
-%      SAWTOOTHGUI('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in SAWTOOTHGUI.M with the given input arguments.
+%      SAWTOOTH2019('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in SAWTOOTH2019.M with the given input arguments.
 %
-%      SAWTOOTHGUI('Property','Value',...) creates a new SAWTOOTHGUI or raises the
+%      SAWTOOTH2019('Property','Value',...) creates a new SAWTOOTH2019 or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before SawtoothGUI_OpeningFcn gets called.  An
+%      applied to the GUI before Sawtooth2019_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to SawtoothGUI_OpeningFcn via varargin.
+%      stop.  All inputs are passed to Sawtooth2019_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help SawtoothGUI
+% Edit the above text to modify the response to help Sawtooth2019
 
-% Last Modified by GUIDE v2.5 30-Apr-GUI 18:54:29
+% Last Modified by GUIDE v2.5 01-May-2019 14:04:13
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @SawtoothGUI_OpeningFcn, ...
-                   'gui_OutputFcn',  @SawtoothGUI_OutputFcn, ...
+                   'gui_OpeningFcn', @Sawtooth2019_OpeningFcn, ...
+                   'gui_OutputFcn',  @Sawtooth2019_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -44,26 +44,26 @@ end
 % End initialization code - DO NOT EDIT
 
 
-% --- Executes just before SawtoothGUI is made visible.
-function SawtoothGUI_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before Sawtooth2019 is made visible.
+function Sawtooth2019_OpeningFcn(hObject, eventdata, handles, varargin)
 % This function has no output args, see OutputFcn.
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-% varargin   command line arguments to SawtoothGUI (see VARARGIN)
+% varargin   command line arguments to Sawtooth2019 (see VARARGIN)
 
-% Choose default command line output for SawtoothGUI
+% Choose default command line output for Sawtooth2019
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes SawtoothGUI wait for user response (see UIRESUME)
+% UIWAIT makes Sawtooth2019 wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = SawtoothGUI_OutputFcn(hObject, eventdata, handles) 
+function varargout = Sawtooth2019_OutputFcn(hObject, eventdata, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -78,6 +78,7 @@ function edit1_Callback(hObject, eventdata, handles)
 % hObject    handle to edit1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
 
 % Hints: get(hObject,'String') returns contents of edit1 as text
 %        str2double(get(hObject,'String')) returns contents of edit1 as a double
@@ -102,6 +103,7 @@ function edit2_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+
 % Hints: get(hObject,'String') returns contents of edit2 as text
 %        str2double(get(hObject,'String')) returns contents of edit2 as a double
 
@@ -125,17 +127,17 @@ function pushbutton1_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+ 
 X=str2double(get(handles.edit1,'String')); 
 T=str2double(get(handles.edit2,'String')); 
-H=10;
-
+H=10; 
 
 fs = 100000; 
 t = -2*T:1/fs:2*T;
 Vm=X/2;
 
 
-x1 = (Vm)*sawtooth(2*pi*t/T)+Vm;
+x1 = (Vm)*sawtooth(2*pi*t/T)+Vm; 
 
 
 plot(t,x1,'g','LineWidth',1.5,'Parent',handles.axes1);
@@ -150,55 +152,13 @@ ylabel('Amplitude','FontSize',10);
 title('Sawtooth','FontSize',10);
 
 
-syms t n 
-a0 = int(((X/T)*t),t,0,T)/T; 
-c0 = a0;
-
-w0 = 2*pi/T; 
-cn = (1/n)*int(((X/T)*t)*exp(-1i*w0*t),t,0,T)*(1/T); 
-
-
-k = 1:H;
-
-c1 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T);
-c2 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T)*(-1);
-
-
-c1';
-c2';
-mgc1= abs(c1);
-mgc2= abs(c2);
-axes(handles.axes2);
-stem(0,a0);
-hold on
-stem(-k,mgc2);
-hold on
-stem(k,mgc1); 
-
-
-axes(handles.axes3);
-zp=[c1];
-p=angle(double(zp));
-phasep= (p*180/pi);
-
-zn=[c2];
-pn=angle(double(zn));
-phasen= (p*180/pi)*(-1);
-
-stem(0,0);
-hold on
-stem(-k,phasen);
-hold on
-stem(k,phasep);
-hold on
-
 
 dat(1,:)={0,abs(-X),0};
 
 for n = 0;
         an = (X/2);
         bn = atan((X/((n)*pi))/0);               
-        bn = radtodeg(bn);
+        bn = radtodeg(n);
         dat(1,:) = {n an bn};
     for n = 1:1:H
 
@@ -222,12 +182,124 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
+X=str2double(get(handles.edit1,'String')); 
+T=str2double(get(handles.edit2,'String')); 
+H=10; 
+
+fs = 100000; 
+t = -2*T:1/fs:2*T;
+Vm=X/2;
+
+
+x1 = (Vm)*sawtooth(2*pi*t/T)+Vm; 
+
+plot(t,x1,'g','LineWidth',1.5,'Parent',handles.axes1);
+
+
+axes(handles.axes1);
+axis([-2*T-(0.05*T) 2*T+(0.15*T) 0 X+(0.02*X)]);
+
+
+xlabel('Time','FontSize',10);
+ylabel('Amplitude','FontSize',10);
+title('Sawtooth','FontSize',10);
+
+
+syms t n 
+a0 = int(((X/T)*t),t,0,T)/T; 
+c0 = a0; 
+
+w0 = 2*pi/T; 
+cn = (1/n)*int(((X/T)*t)*exp(-1i*w0*t),t,0,T)*(1/T); 
+
+
+k = 1:H;
+
+c1 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T); 
+c2 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T)*(-1); 
+
+
+c1';
+c2';
+mgc1= abs(c1);
+mgc2= abs(c2);
+axes(handles.axes2);
+stem(0,a0);
+hold on
+stem(-k,mgc2); 
+hold on
+stem(k,mgc1); 
+
+
 % --- Executes on button press in pushbutton3.
 function pushbutton3_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton3 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+
+X=str2double(get(handles.edit1,'String')); 
+T=str2double(get(handles.edit2,'String')); 
+H=10; 
+fs = 100000; 
+t = -2*T:1/fs:2*T;
+Vm=X/2;
+
+
+x1 = (Vm)*sawtooth(2*pi*t/T)+Vm; 
+
+
+plot(t,x1,'g','LineWidth',1.5,'Parent',handles.axes1);
+
+
+axes(handles.axes1);
+axis([-2*T-(0.05*T) 2*T+(0.15*T) 0 X+(0.02*X)]);
+
+
+xlabel('Time','FontSize',10);
+ylabel('Amplitude','FontSize',10);
+title('Sawtooth','FontSize',10);
+
+
+syms t n 
+a0 = int(((X/T)*t),t,0,T)/T; 
+c0 = a0; 
+
+w0 = 2*pi/T; 
+cn = (1/n)*int(((X/T)*t)*exp(-1i*w0*t),t,0,T)*(1/T); 
+
+k = 1:H;
+
+c1 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T); 
+c2 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T)*(-1); 
+
+
+c1';
+c2';
+mgc1= abs(c1);
+mgc2= abs(c2);
+axes(handles.axes2);
+stem(0,a0);
+hold on
+stem(-k,mgc2); 
+hold on
+stem(k,mgc1); 
+    
+axes(handles.axes3);
+zp=[c1];
+p=angle(double(zp));
+phasep= (p*180/pi);
+
+zn=[c2];
+pn=angle(double(zn));
+phasen= (p*180/pi)*(-1);
+
+stem(0,0);
+hold on
+stem(-k,phasen);
+hold on
+stem(k,phasep);
+hold on
 
 
 function edit3_Callback(hObject, eventdata, handles)
@@ -283,30 +355,37 @@ function pushbutton4_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-
 axes(handles.axes4)
 N = get(handles.popupmenu1,'value');
-X=str2double(get(handles.edit1,'String')); 
-T=str2double(get(handles.edit2,'String')); 
+X=str2double(get(handles.edit1,'String'));
+T=str2double(get(handles.edit2,'String'));
 
-wo = 2*pi;                          
-c0 = 1/2;                           
-t = -5:0.01:5;                    
+w0 = 2*pi/T;                          
+c0 = X/2;                           
+%t = -1:0.01:1;
+fs = 100000; 
+t = -2*T:1/fs:2*T;
+           
 
-yt = c0*ones(size(t));             
+yt = c0*ones(size(t)); 
+%yt = 0;
 
-for n = 1:1:N                    
-  cn = -1/(1i*n*wo);                
-  yt = yt + 2*abs(cn)*cos(n*wo*t+angle(cn));  
+for n = 1:1:N                     
+  cn = -1/(1i*n*w0);                
+  yt = yt + 2*abs(cn)*cos(n*w0*t+angle(cn)); 
+  %cn = 1*X/2*pi*n;
+  %yt = yt + abs(cn)*exp(1j*n*2*pi/T.*t); 
 end
+
 
 plot([-3 -2 -2 -1 -1  0 0 1  1  2 2 3],...    
      [0  1 0 1 0 1 0 1 0 1 0 1], ':');
 hold;                              
 plot(t,yt);
+grid on;
 xlabel('t (seconds)'); ylabel('y(t)');
-ttle = ['THIS IS GIBBS! Fourier Series with N =  ',...
-         handles.popupmenu1(N)];  %Fix this.
+myOptions = {'1','5','15','50','99'};
+ttle = strcat({'Fourier Series with N = '}, myOptions(N)); % strcat no space 
 title(ttle);
 hold;
 
@@ -347,13 +426,15 @@ syms t n
 a0 = int(((X/T)*t),t,0,T)/T; 
 c0 = a0; 
 
+H = 10;
 w0 = 2*pi/T; 
 cn = (1/n)*int(((X/T)*t)*exp(-1i*w0*t),t,0,T)*(1/T); 
 
 k = 1:H;
 
 c1 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T);
-c2 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T)*(-1); 
+c2 = int(((X/T)*t)*exp(-1i*k*w0*t),t,0,T)*(1/T)*(-1);
+
 
 c1';
 c2';
@@ -364,8 +445,7 @@ stem(0,a0);
 hold on
 stem(-k,mgc2);
 hold on
-stem(k,mgc1); 
-
+stem(k,mgc1);
 
 axes(handles.axes3);
 zp=[c1];
@@ -378,25 +458,32 @@ phasen= (p*180/pi)*(-1);
 
 stem(0,0);
 hold on
-stem(-k,phasen); 
+stem(-k,phasen);
 hold on
-stem(k,phasep); 
+stem(k,phasep);
 hold on
 
 
 dat(1,:)={0,abs(-X),0};
-f = figure('Position',[200 200 400 150]);
-for n = 1:1:H
-an = abs(-X/((n)*pi));
-bn = atan((X/((n)*pi))/0);               
-bn = radtodeg(bn);
-dat(n+1,:) = {n an bn};
+
+for n = 0;
+        an = (X/2);
+        bn = atan((X/((n)*pi))/0);               
+        bn = radtodeg(n);
+        dat(1,:) = {n an bn};
+    for n = 1:1:H
+
+
+    an = abs(i*X/(2*pi*(n)));
+    bn = atan((X/((n)*pi))/0);               
+    bn = radtodeg(bn);
+    dat(n+1,:) = {n an bn};
+    end
 end
+
 cnames = {'n','Amplitude','Phase'};
-t = uitable('Parent',f,'Data',dat,'ColumnName',cnames,... 
-            'Position',[20 20 360 100]);
-txt_title = uicontrol('Style', 'text', 'Position', [20 20 360 100],...
-            'String','My Example Title');
+set(handles.uitable1,'data',dat,'ColumnName',cnames);
+
 
 
 
@@ -417,3 +504,17 @@ function pushbutton6_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
     url = 'https://github.com/AminSpek/Fourier-Series-GUI';
     web(url,'-browser')
+
+
+% --- Executes on button press in pushbutton7.
+function pushbutton7_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton7 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+set(handles.edit1,'String','');
+set(handles.edit2,'String','');
+set(handles.edit3,'String','');
+arrayfun(@cla,findall(0,'type','axes'))
+set(handles.uitable1, 'Data', cell(size(get(handles.uitable1,'Data'))));
+cla reset;
