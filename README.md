@@ -23,14 +23,14 @@ The objective is to design Graphical User Interface (GUI) and implement Fourier 
 - Open SawtoothGUI.m with MATLAB and run.
 
 ## Todo List
-- Add Magnitude & Phase function.
+- ~Add Magnitude & Phase function.~
 - Rearrange the coding.
-- Fix magnitude overlap graph.
-- Fix Gibbs Phenomenon Graph (Axel 5) title.
+- ~Fix magnitude overlap graph.~
+- ~Fix Gibbs Phenomenon Graph (Axel 5) title.~
 - Rearrange GUI.
-- Add input value to Gibbs Phenomenon function.
-- uitable data wrong phase value for n = 0.
-- Add reset button.
+- ~Add input value to Gibbs Phenomenon function.~
+- ~uitable data wrong phase value for n = 0.~
+- ~Add reset button.~
 - Add plot value in the graph.
 
 
